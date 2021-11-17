@@ -4,8 +4,11 @@ import com.matheuscordeiro.mangaapi.model.Manga;
 import com.matheuscordeiro.mangaapi.model.MangaResult;
 import com.matheuscordeiro.mangaapi.service.MangaService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +20,7 @@ public class MangaServiceImpl implements MangaService {
     Logger logger = LoggerFactory.getLogger(MangaService.class);
     private static final String MANGA_SEARCH_URL="http://api.jikan.moe/search/manga/";
 
+    @Autowired
     private final RestTemplate restTemplate;
 
     @Override
